@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:todolist/models/task_model.dart';
 
 class Constantes {
   static final ColorScheme darkColorSchene = new ColorScheme(
@@ -25,10 +27,12 @@ class Constantes {
     background: Color(0xFF313131),
     error: Color(0xFF313131),
     onPrimary: Color(0xFF222222),
-    onSecondary: Color(0xFF313131),
+    onSecondary: Color(0xFFF8F8F8),
     onSurface: Color(0xFF313131),
     onBackground: Color(0xFF313131),
     onError: Color(0xFF313131),
     brightness: Brightness.light,
   );
 }
+
+Box<TaskModel>? localStorage;
