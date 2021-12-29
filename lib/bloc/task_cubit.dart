@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -13,7 +15,7 @@ class TaskCubit extends Cubit<int> {
     _newTask.date = date;
     _newTask.finish = false;
     Hive.box("TASKS").add(_newTask);
-    emit(state);
+    emit(state + 1);
   }
 
   void finishTask(TaskModel task) {
@@ -21,5 +23,12 @@ class TaskCubit extends Cubit<int> {
     _newTask = task;
     _newTask.finish = !task.finish!;
     Hive.box("TASKS").put(task.key, _newTask);
+    emit(state + 1);
+  }
+
+  void deleteTask(TaskModel task) async {
+    log(task.key.toString());
+    await Hive.box("TASKS").delete(task.key);
+    emit(state + 1);
   }
 }

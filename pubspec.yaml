@@ -37,6 +37,7 @@ dependencies:
   hive_generator: ^1.1.1
   path_provider: ^2.0.8
   intl: ^0.17.0
+  flutter_slidable: ^1.2.0
 
 dev_dependencies:
   flutter_test:

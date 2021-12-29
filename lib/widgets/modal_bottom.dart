@@ -34,14 +34,15 @@ void showAddForm(BuildContext context) {
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Theme.of(context).colorScheme.onSecondary,
-                        hintText: 'Enter yor task...',
+                        hintText: 'Enter yor task ...',
                         hintStyle: TextStyle(
+                          fontSize: 15,
                           letterSpacing: 2,
                           color: Theme.of(context).colorScheme.onPrimary,
                           fontWeight: FontWeight.bold,
                         ),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(6),
                           borderSide: BorderSide.none,
                         ),
                       ),
@@ -62,7 +63,7 @@ void showAddForm(BuildContext context) {
                     width: 320,
                     height: 50,
                     alignment: Alignment.center,
-                    child: Text('Add new Task'),
+                    child: Text('ADD NEW TASK'),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                     ),
