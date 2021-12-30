@@ -10,7 +10,6 @@ import 'package:todolist/widgets/app_bar.dart';
 import 'package:todolist/widgets/body.dart';
 import 'package:todolist/widgets/floating_button.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
 import 'bloc/task_cubit.dart';
 
 void main() async {
@@ -58,15 +57,34 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class TodoHomePage extends StatelessWidget {
-  TodoHomePage({Key? key}) : super(key: key);
+class TodoHomePage extends StatefulWidget {
+  const TodoHomePage({Key? key}) : super(key: key);
+
+  @override
+  _TodoHomePageState createState() => _TodoHomePageState();
+}
+
+class _TodoHomePageState extends State<TodoHomePage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    Hive.box('TASKS').close();
+    Hive.box("THEME").close();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: TodoAppBar(),
-      body: TaskBody(),
+      body: SafeArea(child: TaskBody()),
       floatingActionButton: TodoFloatingButton(),
     );
   }
