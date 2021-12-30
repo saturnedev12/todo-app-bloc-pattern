@@ -46,25 +46,13 @@ class TaskCard extends StatelessWidget {
                   ),
                   child: Center(
                     child: Icon(
-                      Icons.delete_forever,
+                      Icons.delete,
                       color: Colors.white,
                     ),
                   ),
                 ),
               ),
             ),
-            /*SlidableAction(
-              flex: 5,
-              icon: Icons.delete,
-              backgroundColor: Colors.red,
-              onPressed: (context) {},
-            ),
-            SlidableAction(
-              flex: 5,
-              icon: Icons.delete,
-              backgroundColor: Colors.blue,
-              onPressed: (context) {},
-            ),*/
           ],
         ),
         child: Container(
@@ -74,13 +62,17 @@ class TaskCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primaryVariant,
             borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(5), bottomLeft: Radius.circular(5)),
+              topLeft: Radius.circular(5),
+              bottomLeft: Radius.circular(5),
+            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Checkbox(
+                  shape: CircleBorder(),
                   value: finish,
+                  fillColor: MaterialStateProperty.all(Colors.green),
                   onChanged: (val) {
                     TaskCubit().finishTask(task);
                   }),

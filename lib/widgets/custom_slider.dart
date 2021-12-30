@@ -22,8 +22,8 @@ class CusTomSlider extends StatelessWidget {
         mouseCursor: MouseCursor.defer,
         value: currentValue,
         max: maxValue,
-        divisions: 5,
-        label: "rpogress",
+        divisions: maxValue.toInt(),
+        label: "${currentValue.toInt()}/${maxValue.toInt()}",
         onChanged: (double value) {},
       ),
     );

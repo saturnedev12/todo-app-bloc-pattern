@@ -11,7 +11,7 @@ void showAddForm(BuildContext context) {
         return Container(
           constraints: BoxConstraints(minHeight: 200),
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.onPrimary,
+            color: Theme.of(context).colorScheme.primaryVariant,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
