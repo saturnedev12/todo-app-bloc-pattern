@@ -12,6 +12,11 @@ import 'package:todolist/widgets/floating_button.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'bloc/task_cubit.dart';
 
+/*
+  splash intro
+  icon appli
+  readMe
+ */
 void main() async {
   var path = Directory.current.path;
   Hive.init(path);
@@ -37,6 +42,7 @@ class MyApp extends StatelessWidget {
         return BlocBuilder<ThemeBloc, ThemeState>(
           builder: (context, state) {
             return MaterialApp(
+              debugShowCheckedModeBanner: false,
               title: 'saturne todo',
               theme: ThemeData(
                 brightness: Brightness.light,
