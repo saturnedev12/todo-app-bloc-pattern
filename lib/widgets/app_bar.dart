@@ -8,6 +8,7 @@ import 'package:todolist/bloc/theme_bloc.dart';
 import 'package:todolist/events/theme_events.dart';
 import 'package:todolist/models/task_model.dart';
 import 'package:todolist/states/theme_states.dart';
+import 'package:todolist/widgets/pop_more_menu.dart';
 
 import 'custom_slider.dart';
 
@@ -32,6 +33,7 @@ class TodoAppBar extends StatelessWidget implements PreferredSize {
             ),
           )),
           actions: [
+            PopMoreMenu(),
             BlocBuilder<ThemeBloc, ThemeState>(
               builder: (context, state) {
                 return IconButton(

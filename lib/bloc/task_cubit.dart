@@ -31,4 +31,37 @@ class TaskCubit extends Cubit<int> {
     await Hive.box("TASKS").delete(task.key);
     emit(state + 1);
   }
+
+  void finishAll() {
+    Box _box = Hive.box("TASKS");
+    _box.values.forEach((e) async {
+      TaskModel _newTask = new TaskModel();
+      _newTask = e;
+      _newTask.finish = true;
+      await Hive.box("TASKS").put(e.key, _newTask);
+    });
+    emit(state + 1);
+  }
+
+  void rollBackfinishAll() {
+    Box _box = Hive.box("TASKS");
+    _box.values.forEach((e) async {
+      TaskModel _newTask = new TaskModel();
+      _newTask = e;
+      _newTask.finish = false;
+      await Hive.box("TASKS").put(e.key, _newTask);
+    });
+    emit(state + 1);
+  }
+
+  void deleteAllTask() {
+    Box _box = Hive.box("TASKS");
+    _box.values.forEach((e) async {
+      TaskModel _newTask = new TaskModel();
+      _newTask = e;
+      _newTask.finish = false;
+      await Hive.box("TASKS").delete(e.key);
+    });
+    emit(state + 1);
+  }
 }

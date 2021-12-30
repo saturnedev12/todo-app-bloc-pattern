@@ -16,25 +16,19 @@ class TaskBody extends StatelessWidget {
       valueListenable: Hive.box("TASKS").listenable(),
       builder: (context, box, child) {
         return SingleChildScrollView(
-          child: BlocBuilder<TaskCubit, int>(
-            bloc: TaskCubit(),
-            builder: (context, state) {
-              return Container(
-                padding: EdgeInsets.only(left: 7, right: 7, top: 0),
-                child: Column(
-                  children: box.values
-                      .map<Widget>((e) => TaskCard(
-                            task: e,
-                            title: e.title,
-                            date: e.date,
-                            finish: e.finish,
-                          ))
-                      .toList(),
-                ),
-              );
-            },
+            child: Container(
+          padding: EdgeInsets.only(left: 7, right: 7, top: 0),
+          child: Column(
+            children: box.values
+                .map<Widget>((e) => TaskCard(
+                      task: e,
+                      title: e.title,
+                      date: e.date,
+                      finish: e.finish,
+                    ))
+                .toList(),
           ),
-        );
+        ));
       },
     );
   }
