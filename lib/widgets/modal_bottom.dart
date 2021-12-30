@@ -28,7 +28,7 @@ void showAddForm(BuildContext context) {
                     height: 65,
                     child: TextFormField(
                       //maxLength: 30,
-                      maxLength: 25,
+                      maxLength: 30,
                       controller: taskController,
                       cursorColor: Theme.of(context).colorScheme.onPrimary,
                       decoration: InputDecoration(

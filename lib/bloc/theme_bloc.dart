@@ -15,7 +15,7 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
 
   void initTheme(GetThemeEvent event, Emitter<ThemeState> emit) async {
     var box = Hive.box('THEME');
-    log(box.get('theme'), name: 'current theme');
+    log('${box.get('theme')}', name: 'current theme');
     if (box.get('theme') == null) {
       box.put('theme', 'light');
       emit(ThemeLightState());
