@@ -68,8 +68,8 @@ class TodoAppBar extends StatelessWidget implements PreferredSize {
               box.values.forEach((element) {
                 if (element.finish) _listTaskFinish.add(element);
               });
-              inspect(box.length);
-              inspect(_listTaskFinish);
+              //inspect(box.length);
+              //inspect(_listTaskFinish);
               return CusTomSlider(
                 currentValue: _listTaskFinish.length.toDouble(),
                 maxValue: _boxlength,

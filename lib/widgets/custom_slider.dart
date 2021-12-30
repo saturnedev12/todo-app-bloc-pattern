@@ -17,6 +17,10 @@ class CusTomSlider extends StatelessWidget {
         thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8.0),
         overlayColor: Colors.red.withAlpha(32),
         overlayShape: RoundSliderOverlayShape(overlayRadius: 28.0),
+        valueIndicatorColor: Theme.of(context).colorScheme.primary,
+        valueIndicatorTextStyle: TextStyle(
+          color: Theme.of(context).colorScheme.onPrimary,
+        ),
       ),
       child: Slider(
         mouseCursor: MouseCursor.defer,

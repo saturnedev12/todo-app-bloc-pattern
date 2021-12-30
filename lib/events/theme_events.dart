@@ -9,3 +9,7 @@ class ThemeLightEvent extends ThemeEvent {
 class ThemeDarkEvent extends ThemeEvent {
   ThemeDarkEvent();
 }
+
+class GetThemeEvent extends ThemeEvent {
+  GetThemeEvent();
+}
